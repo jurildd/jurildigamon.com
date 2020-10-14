@@ -1,8 +1,8 @@
 <template>
 	<div class="container">
-		<h1 class="t-body">
+		<h2 class="t-body">
 			Hello, my name is Juril Digamon.
-		</h1>
+		</h2>
 	</div>
 </template>
 
