@@ -3,8 +3,8 @@
 		<h2 class="t-body">
 			Hello, my name is Juril Digamon.
 		</h2>
-		<p class="t-body-small">
-			What the fuck is wrong with Vercel.
+		<p class="t-body-sm">
+			Yay Vercel is working.
 		</p>
 	</div>
 </template>
@@ -18,6 +18,7 @@
 		margin: 0 auto;
 		min-height: 100vh;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
