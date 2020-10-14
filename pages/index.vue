@@ -3,6 +3,9 @@
 		<h2 class="t-body">
 			Hello, my name is Juril Digamon.
 		</h2>
+		<p class="t-body-small">
+			What the fuck is wrong with Vercel.
+		</p>
 	</div>
 </template>
 
