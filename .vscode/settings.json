@@ -1,0 +1,19 @@
+{
+	"editor.formatOnSave": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"editor.fontFamily": "Hack",
+	"prettier.tabWidth": 4,
+	"prettier.singleQuote": true,
+	"vetur.format.options.tabSize": 4,
+	"vetur.format.options.useTabs": true,
+	"prettier.useTabs": true,
+
+	// vetur — displays linting errors but leave actual formatting to eslint
+	"vetur.validation.template": true,
+	"prettier.vueIndentScriptAndStyle": true,
+
+	"vetur.format.styleInitialIndent": true,
+	"vetur.format.scriptInitialIndent": true
+}
