@@ -1,11 +1,11 @@
 <template>
-	<div class="app">
+	<div class="page">
 		<Nuxt />
 	</div>
 </template>
 
 <style lang="scss">
-	.app {
+	.page {
 		--main-bg: var(--main-bg-dark);
 		--nav: var(--nav-dark);
 		--high-contrast: var(--high-contrast-dark);
