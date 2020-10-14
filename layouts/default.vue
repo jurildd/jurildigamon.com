@@ -16,8 +16,8 @@
 		--switcher-divider: var(--switcher-divider-dark);
 		--modal-overlay: var(--modal-overlay-dark);
 		--elevation-high: var(--elevation-high-dark);
-		background-color: var(--main-bg) !important;
-		color: var(--high-contrast) !important;
+		background-color: var(--main-bg);
+		color: var(--high-contrast);
 
 		@media (prefers-color-scheme: light) {
 			--main-bg: var(--main-bg-light);
@@ -30,8 +30,6 @@
 			--switcher-divider: var(--switcher-divider-light);
 			--modal-overlay: var(--modal-overlay-light);
 			--elevation-high: var(--elevation-high-light);
-			background-color: var(--main-bg);
-			color: var(--high-contrast);
 		}
 	}
 </style>
