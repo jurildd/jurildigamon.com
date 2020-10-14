@@ -3,8 +3,8 @@
 		<h2 class="t-body">
 			Hello, my name is Juril Digamon.
 		</h2>
-		<p class="t-body-sm">
-			Yay Vercel is working.
+		<p class="t-body-bold">
+			Watch this space.
 		</p>
 	</div>
 </template>
