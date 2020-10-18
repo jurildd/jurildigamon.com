@@ -14,13 +14,6 @@ module.exports = {
 		'vue/component-name-in-template-casing': ['error', 'PascalCase'],
 		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-		'vue/html-indent': ['error', 'tab', {
-			'attribute': 1,
-			'baseIndent': 1,
-			'closeBracket': 0,
-			'alignAttributesVertically': true,
-			'ignores': []
-		}],
 		'max-len': ['error', {'code': 120}],
         'linebreak-style': [
             'error',
@@ -35,9 +28,15 @@ module.exports = {
             'always'
 		],
 		'no-unused-vars': ['error', {'args': 'none'}],
-        'vue/script-indent': ['error', 'tab', {
+        'vue/script-indent': ['error', 4, {
             'baseIndent': 1
-		}],
+        }],
+        'vue/html-indent': ['error', 4, {
+            'attribute': 1,
+            'closeBracket': 0,
+            'alignAttributesVertically': true,
+            'ignores': []
+        }],
 		'vue/max-attributes-per-line': ['error', {
             'singleline': 2,
             'multiline': {
