@@ -44,15 +44,8 @@
 </template>
 
 <script>
-    import Button from '~/components/_generics/Button.vue';
-
     export default {
         name: 'Navbar',
-
-        components: {
-            Button
-
-        },
 
         methods: {
             cmdClickHandler() {

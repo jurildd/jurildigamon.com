@@ -16,16 +16,8 @@
 </template>
 
 <script>
-    import Navbar from '~/components/Navbar.vue';
-    import SwitcherModal from '~/components/SwitcherModal.vue';
-
     export default {
         name: 'Default',
-
-        components: {
-            Navbar,
-            SwitcherModal
-        },
 
         data() {
             return {
@@ -56,7 +48,8 @@
 		--nav: var(--nav-dark);
 		--high-contrast: var(--high-contrast-dark);
 		--medium-contrast: var(--medium-contrast-dark);
-		--low-contrast: var(--low-contrast-dark);
+        --low-contrast: var(--low-contrast-dark);
+        --switcher-bg: var(--switcher-bg-dark);
 		--switcher-header-bg: var(--switcher-header-bg-dark);
 		--switcher-header: var(--switcher-header-dark);
 		--switcher-divider: var(--switcher-divider-dark);
@@ -72,7 +65,8 @@
 			--nav: var(--nav-light);
 			--high-contrast: var(--high-contrast-light);
 			--medium-contrast: var(--medium-contrast-light);
-			--low-contrast: var(--low-contrast-light);
+            --low-contrast: var(--low-contrast-light);
+            --switcher-bg: var(--switcher-bg-light);
 			--switcher-header-bg: var(--switcher-header-bg-light);
 			--switcher-header: var(--switcher-header-light);
 			--switcher-divider: var(--switcher-divider-light);

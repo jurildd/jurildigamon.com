@@ -59,12 +59,12 @@
     }
 
     .modal-content {
-        background: var(--main-bg);
+        background: var(--switcher-bg);
         max-width: var(--modal-content);
         min-height: 345px;
         border-radius: var(--radius-default);
         box-shadow: var(--elevation-high);
-        margin: var(--gap-biggest) auto;
+        margin: var(--spacer) auto;
         overflow: hidden;
     }
 
