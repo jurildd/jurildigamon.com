@@ -72,9 +72,23 @@
     export default {
         name: 'SwitcherModal',
 
+        mounted() {
+            window.addEventListener('keydown', this.escClickHandler);
+        },
+
+        destroyed() {
+            window.removeEventListener('keydown', this.escClickHandler);
+        },
+
         methods: {
             closeModalHandler() {
                 this.$emit('close');
+            },
+
+            escClickHandler(event) {
+                if(event.keyCode == 27) {
+                    this.closeModalHandler();
+                }
             }
         }
     };

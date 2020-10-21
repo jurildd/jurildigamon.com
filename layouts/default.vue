@@ -5,14 +5,11 @@
         />
         <main class="page__content-wrapper">
             <div class="page__container">
-                <Nuxt
-                    v-hotkey="shortcuts"
-                />
+                <Nuxt />
             </div>
         </main>
         <SwitcherModal
             v-show="showModal"
-            v-hotkey="switcher"
             @toggle-theme="toggleTheme()"
             @close="closeModalHandler"
         />
@@ -20,32 +17,28 @@
 </template>
 
 <script>
+    import tinykeys from 'tinykeys';
+
     export default {
         name: 'Default',
 
         data() {
             return {
-                showModal: false
+                showModal: false,
+                keyBindings: null
             };
         },
 
-        computed: {
-            switcher() {
-                return {
-                    'meta+k': this.showModalHandler,
-                    'esc': this.closeModalHandler
-                };
-            },
-
-            shortcuts() {
-                return {
-                    't': this.toggleTheme
-                };
-            }
+        mounted() {
+            this.keyBindings = tinykeys(window, {
+                '$mod+KeyK': this.showModalHandler,
+                't': this.toggleTheme
+            });
         },
 
         methods: {
             showModalHandler() {
+                event.preventDefault();
                 this.showModal = !this.showModal;
             },
 
