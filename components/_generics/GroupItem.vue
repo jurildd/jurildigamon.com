@@ -35,6 +35,7 @@
             display: flex;
             padding: var(--gap-small) var(--gap-large);
             background-color: var(--switcher-header-bg);
+            color: var(--switcher-header);
         }
     }
 </style>

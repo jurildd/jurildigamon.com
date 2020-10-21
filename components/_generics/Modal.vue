@@ -58,14 +58,4 @@
         overflow: auto;
     }
 
-    .modal-content {
-        background: var(--switcher-bg);
-        max-width: var(--modal-content);
-        min-height: 345px;
-        border-radius: var(--radius-default);
-        box-shadow: var(--elevation-high);
-        margin: var(--spacer) auto;
-        overflow: hidden;
-    }
-
 </style>

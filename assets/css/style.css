@@ -24,12 +24,12 @@
 
 :root {
     /* Colors */
-	--main-bg-dark: #000000;
+	--main-bg-dark: #121214;
     --nav-dark: #E5E7EB;
     --high-contrast-dark: #D2D6DC;
     --medium-contrast-dark: #7F828A;
     --low-contrast-dark: #494B52;
-    --switcher-bg-dark: #19191C;
+    --switcher-bg-dark: #121214;
     --switcher-header-bg-dark: #222226;
     --switcher-header-dark: #9FA6B2;
     --switcher-divider-dark: #2B2B30;
@@ -103,13 +103,41 @@ html {
   	margin: 0;
 }
 
-html, body {
-	height: 100%;
+body {
+    --main-bg: var(--main-bg-dark);
+    --nav: var(--nav-dark);
+    --high-contrast: var(--high-contrast-dark);
+    --medium-contrast: var(--medium-contrast-dark);
+    --low-contrast: var(--low-contrast-dark);
+    --switcher-bg: var(--switcher-bg-dark);
+    --switcher-header-bg: var(--switcher-header-bg-dark);
+    --switcher-header: var(--switcher-header-dark);
+    --switcher-divider: var(--switcher-divider-dark);
+    --modal-overlay: var(--modal-overlay-dark);
+    --elevation-high: var(--elevation-high-dark);
+    font-family: var(--font-family-sans);
+    font-size: 2rem;
+    background-color: var(--main-bg);
+    color: var(--high-contrast);
+    min-height: 100vh;
+    height: 100%;
+    transition: background-color var(--transition-quick),
+        color var(--transition-quick),
+        fill var(--transition-quick);
 }
 
-body {
-	font-family: var(--font-family-sans);
-    font-size: 2rem;
+[data-theme='light'] {
+    --main-bg: var(--main-bg-light);
+    --nav: var(--nav-light);
+    --high-contrast: var(--high-contrast-light);
+    --medium-contrast: var(--medium-contrast-light);
+    --low-contrast: var(--low-contrast-light);
+    --switcher-bg: var(--switcher-bg-light);
+    --switcher-header-bg: var(--switcher-header-bg-light);
+    --switcher-header: var(--switcher-header-light);
+    --switcher-divider: var(--switcher-divider-light);
+    --modal-overlay: var(--modal-overlay-light);
+    --elevation-high: var(--elevation-high-light);
 }
 
 body,

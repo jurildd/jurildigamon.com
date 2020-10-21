@@ -1,16 +1,36 @@
 <template>
-    <li class="switcher__item">
+    <li
+        class="switcher__item"
+        v-on="$listeners"
+    >
         <div class="switcher__item-container">
-            <span class="t-body-md">
-                {{ value }}
-            </span>
-            <!-- <span>
-                {{ icon }}
-            </span> -->
-            <div class="switcher__item-shortcut">
-                <span class="t-body-sm">
-                    {{ shortcut }}
-                </span>
+            <div class="switcher__left">
+                <div class="switcher__icon">
+                    <Icon
+                        :name="icon"
+                        :width="iconWidth"
+                        :height="iconHeight"
+                        color="medium-contrast"
+                    />
+                </div>
+                <p class="t-body-md">
+                    {{ value }}
+                </p>
+            </div>
+            <div class="switcher__right">
+                <div
+                    v-if="value != 'Toggle theme'"
+                    class="switcher__item-shortcut"
+                >
+                    <span class="t-body-sm">
+                        z
+                    </span>
+                </div>
+                <div class="switcher__item-shortcut">
+                    <span class="t-body-sm">
+                        {{ shortcut }}
+                    </span>
+                </div>
             </div>
         </div>
     </li>
@@ -32,6 +52,16 @@
             },
 
             shortcut: {
+                type: String,
+                required: true
+            },
+
+            iconWidth: {
+                type: String,
+                required: true
+            },
+
+            iconHeight: {
                 type: String,
                 required: true
             }
@@ -60,6 +90,10 @@
 
             &:hover {
                 color: var(--high-contrast);
+
+                .icon.medium-contrast > * {
+                    fill: var(--high-contrast) !important;
+                }
             }
 
             &:hover::before {
@@ -72,6 +106,31 @@
             padding: var(--gap) var(--gap-large);
             justify-content: space-between;
             align-items: center;
+        }
+
+        &__left {
+            display: flex;
+            align-items: center;
+
+            & > * + * {
+                margin-left: 16px;
+            }
+        }
+
+        &__icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__right {
+            display: flex;
+            align-items: center;
+            * + * {
+                margin-left: var(--gap-small);
+            }
         }
 
         &__item-shortcut {

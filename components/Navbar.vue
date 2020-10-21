@@ -26,17 +26,12 @@
                     class="navbar__cmd icon"
                     @click="cmdClickHandler"
                 >
-                    <svg
+                    <Icon
                         width="32"
                         height="32"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 32 32"
-                    >
-                        <!-- eslint-disable -->
-                        <path d="M8 2.667A5.333 5.333 0 0113.333 8v2.667h5.334V8A5.333 5.333 0 1124 13.333h-2.667v5.334H24A5.333 5.333 0 1118.667 24v-2.667h-5.334V24A5.333 5.333 0 118 18.667h2.667v-5.334H8A5.333 5.333 0 118 2.667zM21.333 24A2.667 2.667 0 1024 21.333h-2.667V24zm-2.666-10.667h-5.334v5.334h5.334v-5.334zM8 21.333A2.667 2.667 0 1010.667 24v-2.667H8zM10.667 8A2.667 2.667 0 108 10.667h2.667V8zM24 10.667A2.666 2.666 0 1021.333 8v2.667H24z" class="navbar__color" />
-                        <!-- eslint-enable -->
-                    </svg>
+                        name="cmd"
+                        color="nav"
+                    />
                 </Button>
             </div>
         </div>
