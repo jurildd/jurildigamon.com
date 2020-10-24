@@ -2,7 +2,7 @@
     <nav class="navbar">
         <div class="navbar__content-wrapper">
             <div class="navbar__container">
-                <nuxt-link
+                <NuxtLink
                     to="/"
                     class="navbar__logo"
                 >
@@ -21,7 +21,7 @@
                         <path class="navbar__color" d="M39.9727 18H42.5039V1.08984H39.9727V18Z" />
                         <!-- eslint-enable -->
                     </svg>
-                </nuxt-link>
+                </NuxtLink>
                 <Button
                     class="navbar__cmd icon"
                     @click="cmdClickHandler"

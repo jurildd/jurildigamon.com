@@ -228,3 +228,11 @@ button {
     letter-spacing: -0.03em;
 }
 
+/* Page transitions */
+.page-enter-active, .page-leave-active {
+    transition: opacity var(--transition-quick);
+}
+.page-enter, .page-leave-active {
+    opacity: 0
+}
+

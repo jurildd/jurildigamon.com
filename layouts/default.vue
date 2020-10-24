@@ -35,7 +35,11 @@
         mounted() {
             this.keyBindings = tinykeys(window, {
                 '$mod+KeyK': this.toggleModalHandler,
-                't': this.toggleThemeHandler
+                't': this.toggleThemeHandler,
+                'z h': this.homeRouteHandler,
+                'z a': this.aboutRouteHandler,
+                'z c': this.contactRouteHandler,
+                'z p': this.projectsRouteHandler,
             });
         },
 
@@ -52,6 +56,22 @@
             toggleThemeHandler() {
                 document.body.hasAttribute('data-theme') ? document.body.removeAttribute('data-theme') :
                 document.body.setAttribute('data-theme', 'light');
+            },
+
+            homeRouteHandler() {
+                this.$router.push({path: '/'});
+            },
+
+            aboutRouteHandler() {
+                this.$router.push({path: '/about'});
+            },
+
+            contactRouteHandler() {
+                this.$router.push({path: '/contact'});
+            },
+
+            projectsRouteHandler() {
+                this.$router.push({path: '/projects'});
             }
         }
     };
