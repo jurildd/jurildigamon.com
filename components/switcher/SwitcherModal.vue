@@ -139,11 +139,11 @@
 
     // Scale transition
     .scale-enter-active, .scale-leave-active {
-        transition: opacity var(--transition-quick), transform var(--transition-quick);
+        transition: opacity var(--transition-quick), transform var(--transition-scale);
     }
 
     .scale-enter, .scale-leave-to {
-        transform: scale(0.97);
+        transform: scale(0.95);
         opacity: 0;
     }
 </style>
