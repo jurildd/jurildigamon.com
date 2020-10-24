@@ -143,7 +143,7 @@
     }
 
     .scale-enter, .scale-leave-to {
-        transform: scale(0.95);
+        transform: scale(0.97);
         opacity: 0;
     }
 </style>
