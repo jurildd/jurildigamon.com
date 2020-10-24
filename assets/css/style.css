@@ -121,9 +121,6 @@ body {
     color: var(--high-contrast);
     min-height: 100vh;
     height: 100%;
-    transition: background-color var(--transition-quick),
-        color var(--transition-quick),
-        fill var(--transition-quick);
 }
 
 [data-theme='light'] {
