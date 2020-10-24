@@ -1,18 +1,21 @@
 <template>
     <div class="page">
         <Navbar
-            @btn-clicked="showModalHandler"
+            @btn-clicked="toggleModalHandler"
         />
         <main class="page__content-wrapper">
             <div class="page__container">
                 <Nuxt />
             </div>
         </main>
-        <SwitcherModal
-            v-show="showModal"
-            @toggle-theme="toggleTheme()"
-            @close="closeModalHandler"
-        />
+        <transition name="fade">
+            <SwitcherModal
+                v-show="showModal"
+                :toggled="showModal"
+                @toggle-theme="toggleThemeHandler"
+                @close="closeModalHandler"
+            />
+        </transition>
     </div>
 </template>
 
@@ -31,13 +34,13 @@
 
         mounted() {
             this.keyBindings = tinykeys(window, {
-                '$mod+KeyK': this.showModalHandler,
-                't': this.toggleTheme
+                '$mod+KeyK': this.toggleModalHandler,
+                't': this.toggleThemeHandler
             });
         },
 
         methods: {
-            showModalHandler() {
+            toggleModalHandler() {
                 event.preventDefault();
                 this.showModal = !this.showModal;
             },
@@ -46,7 +49,7 @@
                 this.showModal = false;
             },
 
-            toggleTheme() {
+            toggleThemeHandler() {
                 document.body.hasAttribute('data-theme') ? document.body.removeAttribute('data-theme') :
                 document.body.setAttribute('data-theme', 'light');
             }
@@ -65,5 +68,14 @@
 		&__container {
 			margin: 0 var(--gap);
 		}
-	}
+    }
+
+    // Fade transition
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity var(--transition-default);
+    }
+
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
+    }
 </style>

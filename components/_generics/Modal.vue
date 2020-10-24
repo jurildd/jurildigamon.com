@@ -57,5 +57,4 @@
         background: var(--modal-overlay);
         overflow: auto;
     }
-
 </style>
