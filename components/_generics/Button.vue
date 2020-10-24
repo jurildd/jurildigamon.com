@@ -23,14 +23,14 @@
             min-width: 48px;
             justify-content: center;
             align-items: center;
-            border-radius: var(--radius-default);
+            border-radius: var(--radius-icon);
 
             &::before {
                 content: '';
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                border-radius: var(--radius-default);
+                border-radius: var(--radius-icon);
                 background-color: var(--hover-general);
                 transition: opacity var(--transition-default);
                 opacity: 0;
@@ -41,7 +41,7 @@
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                border-radius: var(--radius-default);
+                border-radius: var(--radius-icon);
                 border: 2px solid var(--medium-contrast);
                 transition: opacity var(--transition-default);
                 opacity: 0;
@@ -54,6 +54,13 @@
             &:active::after, &:focus::after {
                 opacity: 1;
             }
+        }
+
+        &.small {
+            background-color: var(--high-contrast);
+            border-radius: var(--radius-button);
+            color: var(--main-bg);
+            padding: var(--gap-tiny) var(--gap-medium);
         }
     }
 </style>

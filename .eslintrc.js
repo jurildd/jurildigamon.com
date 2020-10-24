@@ -44,6 +44,11 @@ module.exports = {
                 'allowFirstLine': false
             }
         }],
+        'vue/multiline-html-element-content-newline': ['error', {
+            'ignoreWhenEmpty': true,
+            'ignores': ['pre', 'textarea', 'NuxtLink', 'a'],
+            'allowEmptyLines': false
+        }],
         'vue/html-closing-bracket-spacing': ['error'],
         'vue/html-closing-bracket-newline': ['error', {
             'singleline': 'never',

@@ -110,7 +110,7 @@
     .switcher {
         background: var(--switcher-bg);
         max-width: var(--modal-content);
-        border-radius: var(--radius-default);
+        border-radius: var(--radius-icon);
         box-shadow: var(--elevation-high);
         margin: var(--spacer) auto;
         overflow: hidden;

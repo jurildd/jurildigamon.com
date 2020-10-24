@@ -6,6 +6,16 @@
         <main class="page__content-wrapper">
             <div class="page__container">
                 <Nuxt />
+                <footer class="page__footer">
+                    <div class="page__footer-container">
+                        <p class="t-body-sm">
+                            Click the ⌘ icon or use the keyboard shortcut ⌘ (ctrl) + K to navigate through the site.
+                        </p>
+                        <Button class="small t-body-sm">
+                            Got it
+                        </Button>
+                    </div>
+                </footer>
             </div>
         </main>
         <transition name="fade">
@@ -87,7 +97,26 @@
 
 		&__container {
 			margin: 0 var(--gap);
-		}
+        }
+
+        &__footer {
+            position: fixed;
+            bottom: 0;
+            margin-bottom: var(--gap-big);
+            max-width: 712px;
+            width: 100%;
+        }
+
+        &__footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px var(--gap-small);
+            width: 100%;
+            background-color: var(--footer-bg);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius-icon);
+        }
     }
 
     // Fade transition

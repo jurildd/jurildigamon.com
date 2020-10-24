@@ -44,6 +44,7 @@
     --switcher-header-light: #4F5259;
     --switcher-divider-light: #DFDFEB;
     --modal-overlay-light: rgba(0, 0, 0, 0.3);
+    --footer-bg-dark: rgba(29, 29, 33, 0.9);
     --hover-general: rgba(159, 166, 178, 0.1);
 
     /* Elevation */
@@ -73,7 +74,8 @@
     /* Layout */
     --body-content: 744px;
     --modal-content: 712px;
-    --radius-default: 10px;
+    --radius-icon: 10px;
+    --radius-button: 7px;
 
     /* Spacing */
     --gap-tiny: 4px;
@@ -117,6 +119,7 @@ body {
     --switcher-divider: var(--switcher-divider-dark);
     --modal-overlay: var(--modal-overlay-dark);
     --elevation-high: var(--elevation-high-dark);
+    --footer-bg: var(--footer-bg-dark);
     /* ------------ */
     font-family: var(--font-family-sans);
     font-size: 2rem;
@@ -159,6 +162,18 @@ hr {
 	padding: 0;
 }
 
+a {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: var(--font-weight-regular);
+    line-height: 1.5;
+    letter-spacing: -0.05em;
+    color: var(--high-contrast);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
+}
+
 ol, ul {
   	list-style: none;
 }
@@ -173,6 +188,10 @@ button {
     margin: 0;
     border: none;
     outline: none;
+}
+
+br {
+    line-height: 1.5;
 }
 
 .btn, .form-control, .link, .reset {
