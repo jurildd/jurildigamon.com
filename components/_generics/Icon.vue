@@ -94,7 +94,7 @@
 
         &.medium-contrast > * {
             fill: var(--medium-contrast);
-            transition: fill var(--transition-quick);
+            transition: fill var(--transition-default);
         }
     }
 </style>

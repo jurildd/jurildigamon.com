@@ -92,6 +92,8 @@
             &::after {
                 content: '';
                 position: absolute;
+                top: 0;
+                left: 0;
                 width: 100%;
                 height: 100%;
                 border-radius: var(--radius-icon);
@@ -102,6 +104,12 @@
 
             &:hover::before {
                 opacity: 1;
+            }
+
+            &:focus {
+                &::before, &::after {
+                    opacity: 1;
+                }
             }
 
             &:active::after, &:focus::after {

@@ -18,19 +18,13 @@
                 </p>
             </div>
             <div class="switcher__right">
-                <div
+                <Shortcut
                     v-if="value != 'Toggle theme'"
-                    class="switcher__item-shortcut"
-                >
-                    <span class="t-body-sm">
-                        z
-                    </span>
-                </div>
-                <div class="switcher__item-shortcut">
-                    <span class="t-body-sm">
-                        {{ shortcut }}
-                    </span>
-                </div>
+                    keybind="z"
+                />
+                <Shortcut
+                    :keybind="shortcut"
+                />
             </div>
         </div>
     </li>
@@ -76,7 +70,7 @@
             height: 56px;
             width: 100%;
             color: var(--medium-contrast);
-            transition: color var(--transition-quick);
+            transition: color var(--transition-default);
 
             &::before {
                 content: '';
@@ -84,7 +78,7 @@
                 width: 100%;
                 height: 100%;
                 background-color: var(--hover-general);
-                transition: opacity var(--transition-quick);
+                transition: opacity var(--transition-default);
                 opacity: 0;
             }
 
@@ -128,19 +122,6 @@
         &__right {
             display: flex;
             align-items: center;
-            * + * {
-                margin-left: var(--gap-small);
-            }
-        }
-
-        &__item-shortcut {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 24px;
-            min-width: 24px;
-            border-radius: 7px;
-            background-color: var(--hover-general);
         }
     }
 

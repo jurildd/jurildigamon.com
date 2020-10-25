@@ -30,7 +30,7 @@
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                border-radius: var(--radius-icon);
+                border-radius: inherit;
                 background-color: var(--hover-general);
                 transition: opacity var(--transition-default);
                 opacity: 0;
@@ -41,14 +41,20 @@
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                border-radius: var(--radius-icon);
-                border: 2px solid var(--medium-contrast);
+                border-radius: inherit;
+                border: 2px solid var(--high-contrast);
                 transition: opacity var(--transition-default);
                 opacity: 0;
             }
 
             &:hover::before {
                 opacity: 1;
+            }
+
+            &:focus {
+                &::before, &::after {
+                    opacity: 1;
+                }
             }
 
             &:active::after, &:focus::after {
@@ -60,7 +66,53 @@
             background-color: var(--high-contrast);
             border-radius: var(--radius-button);
             color: var(--main-bg);
-            padding: var(--gap-tiny) var(--gap-medium);
+            padding: var(--gap-small) var(--gap-medium);
+            font-size: 1.6rem;
+            line-height: 1;
+            letter-spacing: -0.05em;
+            z-index: 1;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+                background-color: var(--medium-contrast);
+                transition: opacity var(--transition-default);
+                opacity: 0;
+                z-index: -1;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -4px;
+                left: -4px;
+                width: calc(100% + 8px);
+                height: calc(100% + 8px);
+                border-radius: inherit;
+                border: 2px solid var(--high-contrast);
+                transition: opacity var(--transition-default);
+                opacity: 0;
+            }
+
+            &:hover::before {
+                opacity: 1;
+            }
+
+
+            &:focus {
+                &::before, &::after {
+                    opacity: 1;
+                }
+            }
+
+            &:active::after, &:focus::after {
+                opacity: 1;
+            }
         }
     }
 </style>

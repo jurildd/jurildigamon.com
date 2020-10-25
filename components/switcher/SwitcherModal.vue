@@ -109,7 +109,7 @@
 <style lang="scss" scoped>
     .switcher {
         background: var(--switcher-bg);
-        max-width: var(--modal-content);
+        max-width: var(--inner-content);
         border-radius: var(--radius-icon);
         box-shadow: var(--elevation-high);
         margin: var(--spacer) auto;
@@ -139,7 +139,7 @@
 
     // Scale transition
     .scale-enter-active, .scale-leave-active {
-        transition: opacity var(--transition-quick), transform var(--transition-scale);
+        transition: opacity var(--transition-default), transform var(--transition-scale);
     }
 
     .scale-enter, .scale-leave-to {
