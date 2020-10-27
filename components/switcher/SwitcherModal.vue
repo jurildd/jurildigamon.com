@@ -2,7 +2,7 @@
     <Modal @close="closeModalHandler">
         <transition name="scale">
             <div
-                v-show="toggled"
+                v-if="toggled"
                 class="switcher modal-content"
             >
                 <div class="switcher__header">
@@ -27,6 +27,7 @@
                                 icon-width="16"
                                 icon-height="18"
                                 shortcut="h"
+                                @click="$router.push({path: '/'})"
                             />
                             <Item
                                 value="About"
@@ -34,6 +35,7 @@
                                 icon-width="18"
                                 icon-height="18"
                                 shortcut="a"
+                                @click="$router.push({path: '/about'})"
                             />
                             <Item
                                 value="Contact"
@@ -41,6 +43,7 @@
                                 icon-width="20"
                                 icon-height="16"
                                 shortcut="c"
+                                @click="$router.push({path: '/contact'})"
                             />
                             <Item
                                 value="Projects"
@@ -48,6 +51,7 @@
                                 icon-width="16"
                                 icon-height="20"
                                 shortcut="p"
+                                @click="$router.push({path: '/projects'})"
                             />
                         </GroupItem>
                         <GroupItem label="Social">
@@ -75,12 +79,16 @@
 
 <script>
     export default {
-        name: 'SwitcherModal',
-
         props: {
             toggled: {
                 type: Boolean,
                 required: true
+            }
+        },
+
+        watch: {
+            toggled: {
+                handler: 'handleOverflow'
             }
         },
 
@@ -101,6 +109,20 @@
                 if(event.keyCode == 27) {
                     this.closeModalHandler();
                 }
+            },
+
+            handleOverflow() {
+                this.$nextTick(() => {
+                    if(this.toggled) {
+                        document.body.style.overflow = 'hidden';
+                    }
+                    else {
+                        // Delay showing of scrollbar to prevent layout shift
+                        setTimeout(() => {
+                            document.body.style.overflow = '';
+                        }, 100);
+                    }
+                });
             }
         }
     };

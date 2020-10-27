@@ -94,11 +94,8 @@ body {
     --footer-bg: var(--footer-bg-dark);
     /* ------------ */
     font-family: var(--font-family-sans);
-    font-size: 2rem;
     background-color: var(--main-bg);
     color: var(--high-contrast);
-    min-height: 100vh;
-    height: 100%;
 }
 
 [data-theme='light'] {

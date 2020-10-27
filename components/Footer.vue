@@ -21,8 +21,6 @@
 
 <script>
     export default {
-        name: 'Footer',
-
         computed: {
             isMacOS() {
                 if(process.client && window.navigator.userAgent.indexOf('Mac') != -1) {

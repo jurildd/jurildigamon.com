@@ -6,6 +6,15 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
+body {
+	/* Prevent scrollbar shift */
+	margin-left: calc(100vw - 100%);
+	margin-right: 0;
+	font-size: 2rem;
+	min-height: 100vh;
+    height: 100%;
+}
+
 *,
 *::before,
 *::after {
@@ -13,7 +22,6 @@ html {
   	margin: 0;
 }
 
-body,
 h1,
 h2,
 h3,

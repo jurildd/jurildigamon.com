@@ -5,9 +5,7 @@
 </template>
 
 <script>
-    export default {
-        name: 'GroupItems'
-    };
+    export default {};
 </script>
 
 <style>

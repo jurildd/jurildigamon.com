@@ -37,13 +37,12 @@
             this.keyBindings = tinykeys(window, {
                 '$mod+KeyK': this.toggleModalHandler,
                 't': this.toggleThemeHandler,
-                'z h': this.homeRouteHandler,
-                'z a': this.aboutRouteHandler,
-                'z c': this.contactRouteHandler,
-                'z p': this.projectsRouteHandler,
+                'z h': () => this.routeHandler(''),
+                'z a': () => this.routeHandler('about'),
+                'z c': () => this.routeHandler('contact'),
+                'z p': () => this.routeHandler('projects'),
             });
         },
-
 
         methods: {
             toggleModalHandler() {
@@ -61,21 +60,13 @@
                 document.body.setAttribute('data-theme', 'light');
             },
 
-            homeRouteHandler() {
-                this.$router.push({path: '/'});
+            routeHandler(route) {
+                console.log('dsadas');
+                this.$router.push({path: `/${route}`});
+                if(this.showModal) {
+                    this.showModal = false;
+                }
             },
-
-            aboutRouteHandler() {
-                this.$router.push({path: '/about'});
-            },
-
-            contactRouteHandler() {
-                this.$router.push({path: '/contact'});
-            },
-
-            projectsRouteHandler() {
-                this.$router.push({path: '/projects'});
-            }
         }
     };
 </script>

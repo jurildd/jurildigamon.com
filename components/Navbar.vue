@@ -40,8 +40,6 @@
 
 <script>
     export default {
-        name: 'Navbar',
-
         methods: {
             cmdClickHandler() {
                 this.$emit('btn-clicked');

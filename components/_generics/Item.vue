@@ -32,8 +32,6 @@
 
 <script>
     export default {
-        name: 'Item',
-
         props: {
             value: {
                 type: String,

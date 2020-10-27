@@ -6,8 +6,6 @@
 
 <script>
     export default {
-        name: 'Shortcut',
-
         props: {
             keybind: {
                 type: String,

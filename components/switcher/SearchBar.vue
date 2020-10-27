@@ -8,6 +8,7 @@
         </div>
         <input
             id="search"
+            ref="search"
             class="search-bar__input t-body-md"
             type="text"
             name="search"
@@ -18,7 +19,9 @@
 
 <script>
     export default {
-        name: 'SearchBar'
+        mounted() {
+            this.$refs.search.focus();
+        }
     };
 </script>
 

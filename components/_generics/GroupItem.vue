@@ -13,8 +13,6 @@
 
 <script>
     export default {
-        name: 'GroupItem',
-
         props: {
             label: {
                 type: String,

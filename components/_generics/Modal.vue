@@ -10,8 +10,6 @@
 
 <script>
     export default {
-        name: 'Modal',
-
         props: {
             allowOutsideClick: {
                 type: Boolean,
@@ -19,14 +17,6 @@
                     return true;
                 }
             }
-        },
-
-        mounted() {
-            document.body.style.overflow = 'hidden';
-        },
-
-        destroyed() {
-            document.body.style.overflow = 'visible';
         },
 
         methods: {
