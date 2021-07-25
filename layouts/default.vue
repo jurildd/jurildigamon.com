@@ -26,22 +26,31 @@
     export default {
         name: 'Default',
 
-        data() {
+        provide() {
             return {
-                showModal: false,
-                keyBindings: null
+                keyBinds: this.keyBinds
             };
         },
 
+        data() {
+            return {
+                showModal: false,
+                // switcherKeyBind: null,
+                switcherKeyBind: null,
+                keyBinds: null
+            };
+        },
+
+        eventBusCallbacks: {
+            'toggle-key-binds': 'toggleKeyBinds'
+            // 'remove-bindings': 'removeKeyBinds'
+        },
+
         mounted() {
-            this.keyBindings = tinykeys(window, {
+            this.switcherKeyBind = tinykeys(window, {
                 '$mod+KeyK': this.toggleModalHandler,
-                't': this.toggleThemeHandler,
-                'z h': () => this.routeHandler(''),
-                'z a': () => this.routeHandler('about'),
-                'z c': () => this.routeHandler('contact'),
-                'z p': () => this.routeHandler('projects'),
             });
+            this.setKeyBinds();
         },
 
         methods: {
@@ -55,18 +64,41 @@
             },
 
             toggleThemeHandler() {
-                console.log('here');
                 document.body.hasAttribute('data-theme') ? document.body.removeAttribute('data-theme') :
                 document.body.setAttribute('data-theme', 'light');
             },
 
             routeHandler(route) {
-                console.log('dsadas');
                 this.$router.push({path: `/${route}`});
                 if(this.showModal) {
                     this.showModal = false;
                 }
             },
+
+            setKeyBinds() {
+                this.keyBinds = tinykeys(window, {
+                    't': this.toggleThemeHandler,
+                    'z h': () => this.routeHandler(''),
+                    'z a': () => this.routeHandler('about'),
+                    'z c': () => this.routeHandler('contact'),
+                    'z p': () => this.routeHandler('projects'),
+                });
+            },
+
+            removeKeyBinds() {
+                this.$nextTick(() => {
+                    this.keyBinds();
+                });
+            },
+
+            toggleKeyBinds(toggle) {
+                if (!toggle) {
+                    this.removeKeyBinds();
+                }
+                else {
+                    this.setKeyBinds();
+                }
+            }
         }
     };
 </script>

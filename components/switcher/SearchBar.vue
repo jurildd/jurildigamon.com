@@ -13,14 +13,42 @@
             type="text"
             name="search"
             placeholder="Search or type a command"
+            @focus="handleFocus()"
+            @blur="handleBlur()"
+            @input="handleSearch($event)"
         >
     </div>
 </template>
 
 <script>
     export default {
+        // inject: [
+        //     'keyBinds'
+        // ],
+
+        created() {
+
+        },
+
         mounted() {
             this.$refs.search.focus();
+        },
+
+        // destroyed() {
+        //     this.$eventBus.$emit('toggle-key-binds', true);
+        // },
+
+        methods: {
+            handleSearch(event) {
+            },
+
+            handleFocus() {
+                this.$eventBus.$emit('toggle-key-binds', false);
+            },
+
+            handleBlur() {
+                this.$eventBus.$emit('toggle-key-binds', true);
+            }
         }
     };
 </script>

@@ -62,7 +62,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-			margin: 0 var(--gap);
+			margin: 0 var(--gap-small);
 		}
 
         &__logo {

@@ -27,7 +27,7 @@
                                 icon-width="16"
                                 icon-height="18"
                                 shortcut="h"
-                                @click="$router.push({path: '/'})"
+                                @click="$router.push({path: '/'}); $emit('close')"
                             />
                             <Item
                                 value="About"
@@ -35,7 +35,7 @@
                                 icon-width="18"
                                 icon-height="18"
                                 shortcut="a"
-                                @click="$router.push({path: '/about'})"
+                                @click="$router.push({path: '/about'}); $emit('close')"
                             />
                             <Item
                                 value="Contact"
@@ -43,7 +43,7 @@
                                 icon-width="20"
                                 icon-height="16"
                                 shortcut="c"
-                                @click="$router.push({path: '/contact'})"
+                                @click="$router.push({path: '/contact'}); $emit('close')"
                             />
                             <Item
                                 value="Projects"
@@ -51,7 +51,7 @@
                                 icon-width="16"
                                 icon-height="20"
                                 shortcut="p"
-                                @click="$router.push({path: '/projects'})"
+                                @click="$router.push({path: '/projects'}); $emit('close')"
                             />
                         </GroupItem>
                         <GroupItem label="Social">
@@ -93,22 +93,21 @@
         },
 
         mounted() {
-            window.addEventListener('keydown', this.escClickHandler);
-        },
+            const escClickHandler = (e) => {
+                if(e.key == 'Escape' && this.toggled) {
+                    this.closeModalHandler();
+                }
+            };
 
-        destroyed() {
-            window.removeEventListener('keydown', this.escClickHandler);
+            document.addEventListener('keydown', escClickHandler);
+            this.$once('hook:destroyed', () => {
+                document.removeEventListener('keydown', escClickHandler);
+            });
         },
 
         methods: {
             closeModalHandler() {
                 this.$emit('close');
-            },
-
-            escClickHandler(event) {
-                if(event.keyCode == 27) {
-                    this.closeModalHandler();
-                }
             },
 
             handleOverflow() {
@@ -165,7 +164,7 @@
     }
 
     .scale-enter, .scale-leave-to {
-        transform: scale(0.97);
+        transform: scale(0.95);
         opacity: 0;
     }
 </style>

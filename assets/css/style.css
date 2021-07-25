@@ -13,18 +13,18 @@
     --switcher-header-dark: #9FA6B2;
     --switcher-divider-dark: #2B2B30;
     --modal-overlay-dark: rgba(0, 0, 0, 0.8);
-    --footer-bg-dark: var(--switcher-bg-dark);
+    --footer-bg-dark: var(--switcher-header-bg-dark);
     --main-bg-light: #FAFAFA;
     --nav-light: #282829;
     --high-contrast-light: #353638;
-    --medium-contrast-light: #727378;
+    --medium-contrast-light: #57595C;
     --low-contrast-light: #ACB2C2;
     --switcher-bg-light: var(--main-bg-light);
     --switcher-header-bg-light: #F2F4F7;
     --switcher-header-light: #4F5259;
     --switcher-divider-light: #DFDFEB;
     --modal-overlay-light: rgba(0, 0, 0, 0.3);
-    --footer-bg-light: var(--switcher-bg-light);
+    --footer-bg-light: var(--switcher-header-bg-light);
     --hover-general: rgba(159, 166, 178, 0.1);
 
     /* Elevation */
