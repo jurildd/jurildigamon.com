@@ -9,22 +9,32 @@
         <input
             id="search"
             ref="search"
+            :value="value"
+            autocomplete="off"
             class="search-bar__input t-body-md"
             type="text"
             name="search"
             placeholder="Search or type a command"
             @focus="handleFocus()"
             @blur="handleBlur()"
-            @input="handleSearch($event)"
+            @input="$emit('input', $event.target.value)"
         >
     </div>
 </template>
 
 <script>
     export default {
-        // inject: [
-        //     'keyBinds'
-        // ],
+
+        props: {
+            value: {
+                type: String,
+                required: true
+            }
+        },
+        data() {
+            return {
+            };
+        },
 
         created() {
 

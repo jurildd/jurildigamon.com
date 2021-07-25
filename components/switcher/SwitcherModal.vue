@@ -6,11 +6,13 @@
                 class="switcher modal-content"
             >
                 <div class="switcher__header">
-                    <SearchBar />
+                    <SearchBar
+                        v-model="search"
+                    />
                 </div>
                 <div class="switcher__body">
                     <GroupItems>
-                        <GroupItem label="Sitewide">
+                        <!-- <GroupItem label="Sitewide">
                             <Item
                                 value="Toggle theme"
                                 icon="light"
@@ -19,42 +21,24 @@
                                 shortcut="t"
                                 @click="$emit('toggle-theme')"
                             />
-                        </GroupItem>
-                        <GroupItem label="Navigation">
+                        </GroupItem> -->
+                        <GroupItem
+                            v-for="(nav, a) in filteredNavs"
+                            :key="`navgroup-${a}`"
+                            :label="nav.groupLabel"
+                        >
                             <Item
-                                value="Home"
-                                icon="home"
-                                icon-width="16"
-                                icon-height="18"
-                                shortcut="h"
-                                @click="$router.push({path: '/'}); $emit('close')"
-                            />
-                            <Item
-                                value="About"
-                                icon="about"
-                                icon-width="18"
-                                icon-height="18"
-                                shortcut="a"
-                                @click="$router.push({path: '/about'}); $emit('close')"
-                            />
-                            <Item
-                                value="Contact"
-                                icon="contact"
-                                icon-width="20"
-                                icon-height="16"
-                                shortcut="c"
-                                @click="$router.push({path: '/contact'}); $emit('close')"
-                            />
-                            <Item
-                                value="Projects"
-                                icon="document"
-                                icon-width="16"
-                                icon-height="20"
-                                shortcut="p"
-                                @click="$router.push({path: '/projects'}); $emit('close')"
+                                v-for="(item, b) in nav.groupItems"
+                                :key="`item-${b}`"
+                                :value="item.value"
+                                :icon="item.icon"
+                                :icon-width="item.width"
+                                :icon-height="item.height"
+                                :shortcut="item.shortcut"
+                                @click="goToRoute(item.route)"
                             />
                         </GroupItem>
-                        <GroupItem label="Social">
+                        <!-- <GroupItem label="Social">
                             <Item
                                 value="Twitter"
                                 icon="twitter"
@@ -69,7 +53,7 @@
                                 icon-height="20"
                                 shortcut="g"
                             />
-                        </GroupItem>
+                        </GroupItem> -->
                     </GroupItems>
                 </div>
             </div>
@@ -79,10 +63,107 @@
 
 <script>
     export default {
+
         props: {
             toggled: {
                 type: Boolean,
                 required: true
+            }
+        },
+
+        data() {
+            return {
+                search: '',
+                navs: [
+                    {
+                        groupLabel: 'Sitewide',
+                        groupItems: [
+                            {
+                                value: 'Toggle theme',
+                                icon: 'theme',
+                                width: '21',
+                                height: '22',
+                                shortcut: 't',
+                                route: 'toggle-theme'
+                            }
+                        ]
+                    },
+                    {
+                        groupLabel: 'Navigation',
+                        groupItems: [
+                            {
+                                value: 'Home',
+                                icon: 'home',
+                                width: '16',
+                                height: '18',
+                                shortcut: 'h',
+                                route: '/'
+                            },
+                            {
+                                value: 'About',
+                                icon: 'about',
+                                width: '18',
+                                height: '18',
+                                shortcut: 'a',
+                                route: '/about'
+                            },
+                            {
+                                value: 'Contact',
+                                icon: 'contact',
+                                width: '20',
+                                height: '16',
+                                shortcut: 'c',
+                                route: '/contact'
+                            },
+                            {
+                                value: 'Projects',
+                                icon: 'document',
+                                width: '16',
+                                height: '20',
+                                shortcut: 'p',
+                                route: '/projects'
+                            },
+                        ]
+                    },
+                    {
+                        groupLabel: 'Social',
+                        groupItems: [
+                            {
+                                value: 'Twitter',
+                                icon: 'twitter',
+                                width: '22',
+                                height: '17',
+                                shortcut: 't',
+                                route: '/'
+                            },
+                            {
+                                value: 'Github',
+                                icon: 'github',
+                                width: '20',
+                                height: '20',
+                                shortcut: 'g',
+                                route: '/'
+                            },
+                        ]
+                    }
+                ]
+            };
+        },
+
+        computed: {
+            filteredNavs() {
+                // return this.navs.filter(group => {
+                //     return group.groupItems.some(item => {
+                //         return item.value.toLowerCase().includes(this.search.toLowerCase());
+                //     });
+                // });
+                return this.navs.reduce((r, {groupLabel, groupItems}) => {
+                    let o = groupItems.filter(({value}) => value.toLowerCase().includes(this.search.toLowerCase()));
+                    if (o && o.length) {
+                        r.push({groupLabel, groupItems : [...o]});
+                    }
+                    return r;
+                }, []);
             }
         },
 
@@ -93,6 +174,7 @@
         },
 
         mounted() {
+            console.log(this.navs);
             const escClickHandler = (e) => {
                 if(e.key == 'Escape' && this.toggled) {
                     this.closeModalHandler();
@@ -107,6 +189,7 @@
 
         methods: {
             closeModalHandler() {
+                this.search = '';
                 this.$emit('close');
             },
 
@@ -122,6 +205,17 @@
                         }, 100);
                     }
                 });
+            },
+
+            goToRoute(route) {
+                if (route === 'toggle-theme') {
+                    this.$emit('toggle-theme');
+                }
+                else {
+                    this.$router.push({path: route});
+                }
+                this.search = '';
+                this.$emit('close');
             }
         }
     };
