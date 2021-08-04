@@ -22,6 +22,14 @@
                         <!-- eslint-enable -->
                     </svg>
                 </NuxtLink>
+                <transition name="fade">
+                    <h1
+                        v-if="getCurrentRoute && !isChanging"
+                        class="t-body"
+                    >
+                        {{ getCurrentRoute }}
+                    </h1>
+                </transition>
                 <Button
                     class="navbar__cmd icon"
                     @click="cmdClickHandler"
@@ -40,6 +48,44 @@
 
 <script>
     export default {
+
+        data() {
+            return {
+                isChanging: false
+            };
+        },
+
+        computed: {
+            getCurrentRoute() {
+                let route = this.$route.name;
+                if (route == 'index') {
+                    return '';
+                }
+                if (route) {
+                    return route.charAt(0).toUpperCase() + route.slice(1);
+                }
+                return '';
+            }
+        },
+
+        watch: {
+            getCurrentRoute: {
+                immediate: true,
+                handler: function (newVal) {
+                    if (newVal) {
+                        this.isChanging = true;
+                        setTimeout(() => {
+                            this.isChanging = false;
+                        }, 50);
+                    }
+                }
+            }
+        },
+
+        mounted() {
+            console.log(this.$route);
+        },
+
         methods: {
             cmdClickHandler() {
                 this.$emit('btn-clicked');
@@ -50,8 +96,12 @@
 
 <style lang="scss">
     .navbar {
-        padding-top: 56px;
+        padding-top: var(--gap-big);
         width: 100%;
+
+        @media screen and (max-width: 600px) {
+            padding-top: var(--gap-large);
+        }
 
         &__content-wrapper {
             max-width: var(--body-content);
@@ -62,7 +112,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-			margin: 0 var(--gap-small);
+			margin: 0 var(--gap);
 		}
 
         &__logo {
@@ -122,5 +172,14 @@
         &__color {
             fill: var(--nav);
         }
+    }
+
+    // Fade transition
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity var(--transition-default);
+    }
+
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
     }
 </style>

@@ -27,7 +27,7 @@ module.exports = {
             'error',
             'always'
 		],
-		'no-unused-vars': ['error', {'args': 'none'}],
+		'no-unused-vars': 'off',
         'vue/script-indent': ['error', 4, {
             'baseIndent': 1
         }],

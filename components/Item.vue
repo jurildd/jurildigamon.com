@@ -1,5 +1,6 @@
 <template>
     <li
+        :class="{active: isActive}"
         class="switcher__item"
         v-on="$listeners"
     >
@@ -56,6 +57,11 @@
             iconHeight: {
                 type: String,
                 required: true
+            },
+
+            isActive: {
+                type: Boolean,
+                required: true
             }
         }
     };
@@ -73,11 +79,28 @@
             &::before {
                 content: '';
                 position: absolute;
-                width: 100%;
+                width: 98%;
                 height: 100%;
+                border-radius: 5px;
+                border-top: 1px solid var(--main-bg);
+                border-bottom: 1px solid var(--main-bg);
+                left: 50%;
+                transform: translateX(-50%);
                 background-color: var(--hover-general);
                 transition: opacity var(--transition-default);
                 opacity: 0;
+            }
+
+            &.active {
+                color: var(--high-contrast);
+
+                .icon.medium-contrast > * {
+                    fill: var(--high-contrast) !important;
+                }
+
+                &::before {
+                    opacity: 1;
+                }
             }
 
             &:hover {
@@ -86,10 +109,6 @@
                 .icon.medium-contrast > * {
                     fill: var(--high-contrast) !important;
                 }
-            }
-
-            &:hover::before {
-                opacity: 1;
             }
         }
 

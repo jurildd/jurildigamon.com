@@ -1,5 +1,8 @@
 <template>
     <article class="container">
+        <h1 class="t-header">
+            Hello.
+        </h1>
         <p class="t-body">
             I’m Juril Digamon, a product designer and design engineer (aka
             <a
@@ -9,15 +12,6 @@
             I specialize in creating modern, responsive, and accessible web designs.
             <br />
             <br />
-            Currently a UI/UX developer at
-            <a
-                href="https://bposeats.com"
-                target="_blank"
-            >BPOSeats</a>.
-            Learn more about
-            <NuxtLink
-                to="/projects"
-            >my work</NuxtLink>.
         </p>
     </article>
 </template>
@@ -26,5 +20,8 @@
     export default {};
 </script>
 
-<style>
+<style lang="scss" scoped>
+    .t-header {
+        margin-bottom: var(--gap-large);
+    }
 </style>

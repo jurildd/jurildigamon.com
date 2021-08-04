@@ -14,8 +14,11 @@
             class="search-bar__input t-body-md"
             type="text"
             name="search"
-            placeholder="Search or type a command"
-            @focus="handleFocus()"
+            placeholder="Search for a keyword"
+            @keydown.down="highlightNext"
+            @keydown.up="highlightPrev"
+            @keydown.enter="selectHighlighted"
+            @keydown.tab.prevent
             @blur="handleBlur()"
             @input="$emit('input', $event.target.value)"
         >
@@ -29,6 +32,11 @@
             value: {
                 type: String,
                 required: true
+            },
+
+            toggled: {
+                type: Boolean,
+                required: true
             }
         },
         data() {
@@ -36,28 +44,35 @@
             };
         },
 
-        created() {
-
+        watch: {
+            toggled: {
+                immediate: true,
+                handler: function (newVal) {
+                    if (newVal) {
+                        this.handleBlur();
+                    }
+                }
+            }
         },
-
-        mounted() {
-            this.$refs.search.focus();
-        },
-
-        // destroyed() {
-        //     this.$eventBus.$emit('toggle-key-binds', true);
-        // },
 
         methods: {
-            handleSearch(event) {
-            },
-
-            handleFocus() {
-                this.$eventBus.$emit('toggle-key-binds', false);
-            },
 
             handleBlur() {
-                this.$eventBus.$emit('toggle-key-binds', true);
+                if (this.$refs.search) {
+                    this.$refs.search.focus();
+                }
+            },
+
+            highlightNext() {
+                this.$emit('arrow-key-handler', 'next');
+            },
+
+            highlightPrev() {
+                this.$emit('arrow-key-handler', 'prev');
+            },
+
+            selectHighlighted() {
+                this.$emit('select-highlighted');
             }
         }
     };
@@ -68,7 +83,6 @@
         position: relative;
         width: 100%;
         height: 56px;
-        border-bottom: 1px solid var(--switcher-divider);
 
         &__icon {
             position: absolute;

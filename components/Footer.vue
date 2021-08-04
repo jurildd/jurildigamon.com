@@ -12,7 +12,10 @@
                     to navigate through the site.
                 </p>
             </div>
-            <Button class="small t-body-sm">
+            <Button
+                class="small t-body-sm"
+                @click="$emit('close')"
+            >
                 Got it
             </Button>
         </div>
@@ -21,6 +24,7 @@
 
 <script>
     export default {
+
         computed: {
             isMacOS() {
                 if(process.client && window.navigator.userAgent.indexOf('Mac') != -1) {

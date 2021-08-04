@@ -1,11 +1,9 @@
 <template>
-    <article class="container">
-        <div class="container__illustration">
+    <div class="error-page">
+        <div class="error-page__illustration">
             <img
-                src="~/assets/images/construction.png"
-                alt="Assembling bricks illustration"
-                height="480px"
-                width="auto"
+                src="~/assets/images/404.png"
+                alt="Person with lightbulb head illustration"
                 loading="lazy"
             />
             <caption>
@@ -21,23 +19,25 @@
                 </p>
             </caption>
         </div>
-        <div class="container__text">
+        <div class="error-page__text">
             <p class="t-body-bold">
-                Still on it..
+                404
             </p>
             <p class="t-body-sm">
-                This page is still under construction. Come back next time.
+                Err, uh, nothing to see here.. yet.
             </p>
         </div>
-    </article>
+    </div>
 </template>
 
 <script>
-    export default {};
+    export default {
+        layout: 'error'
+    };
 </script>
 
 <style lang="scss" scoped>
-    .container {
+    .error-page {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -63,7 +63,10 @@
         }
 
         & > * + * {
-                margin-top: var(--gap-biggest);
+               margin-top: var(--gap-biggest);
         }
+
+        // p {
+        // }
     }
 </style>
