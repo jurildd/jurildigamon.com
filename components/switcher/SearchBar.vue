@@ -37,6 +37,11 @@
             toggled: {
                 type: Boolean,
                 required: true
+            },
+
+            isMobile: {
+                type: Boolean,
+                required: true
             }
         },
         data() {
@@ -48,7 +53,7 @@
             toggled: {
                 immediate: true,
                 handler: function (newVal) {
-                    if (newVal) {
+                    if (newVal && !this.isMobile) {
                         this.handleBlur();
                     }
                 }

@@ -12,6 +12,7 @@
     button {
         position: relative;
         display: flex;
+        flex-shrink: 0;
         border: none;
         outline: none;
         background-color: transparent;

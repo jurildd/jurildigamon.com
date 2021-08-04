@@ -8,7 +8,7 @@
                 <Nuxt />
                 <transition name="fade">
                     <Footer
-                        v-if="showHint"
+                        v-if="showHint && !isMobile"
                         @close="dismissFooter"
                     />
                 </transition>
@@ -49,6 +49,15 @@
 
         eventBusCallbacks: {
             'toggle-key-binds': 'toggleKeyBinds'
+        },
+
+        computed: {
+            isMobile() {
+                if (process.client) {
+                    return document.body.clientWidth < 600 ? true : false;
+                }
+                return false;
+            }
         },
 
         mounted() {

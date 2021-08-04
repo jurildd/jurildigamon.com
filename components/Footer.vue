@@ -44,6 +44,12 @@
             margin-bottom: var(--gap-big);
             max-width: var(--inner-content);
             width: 100%;
+
+            @media screen and (max-width: 600px) {
+                width: calc(100% - var(--gap)*2);
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
 
         &__footer-container {
@@ -61,6 +67,7 @@
         &__footer-left {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         &__footer-shortcuts {

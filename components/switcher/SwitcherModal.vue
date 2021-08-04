@@ -9,6 +9,7 @@
                     <SwitcherSearchBar
                         v-model="search"
                         :toggled="toggled"
+                        :is-mobile="isMobile"
                         @arrow-key-handler="arrowKeyHandler"
                         @select-highlighted="selectHighlighted"
                     />
@@ -169,6 +170,13 @@
                     return r;
                 }, []);
             },
+
+            isMobile() {
+                if (process.client) {
+                    return document.body.clientWidth < 600 ? true : false;
+                }
+                return false;
+            }
         },
 
         watch: {
@@ -202,7 +210,7 @@
             },
 
             search(newVal) {
-                if (document.body.clientWidth > 600) {
+                if (!this.isMobile) {
                     console.log('here');
                     this.handleHeightAnimation();
                 }
