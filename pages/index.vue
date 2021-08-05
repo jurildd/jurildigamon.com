@@ -13,8 +13,6 @@
                 front-end designer
             </a>).
             I specialize in creating modern, responsive, and accessible web designs.
-            <br />
-            <br />
         </p>
     </article>
 </template>

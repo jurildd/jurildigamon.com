@@ -148,8 +148,7 @@
                 ],
                 highlightedIndex: -1,
                 total: 0,
-                INITIAL_HEIGHT: 285,
-                MOBILE_HEIGHT: 540
+                INITIAL_HEIGHT: 285
             };
         },
 
@@ -299,12 +298,6 @@
 
                     });
                 }
-                // if (body.clientHeight) {
-                //     body.style.height = 0;
-                // }
-                // else if (body.clientHeight == 0) {
-                //     body.style.height = body.scrollHeight + 'px';
-                // }
 
             }
         }
@@ -340,7 +333,7 @@
 
             @media screen and (max-width: 600px) {
                 max-height: unset;
-                height: Min(calc(100vh - var(--gap-biggest)), 540px);
+                height: Min(calc(100vh - var(--gap-biggest)*2), 540px);
             }
 
             &::-webkit-scrollbar {

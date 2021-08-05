@@ -13,6 +13,7 @@
                         viewBox="0 0 30 30"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
+                        focusable="false"
                     ><path
                         d="M28 15c0 7.18-5.82 13-13 13S2 22.18 2 15 7.82 2 15 2s13 5.82 13 13z"
                         class="navbar__color"

@@ -42,6 +42,10 @@
         flex-direction: column;
         align-items: center;
 
+        &__illustration caption {
+            margin-top: var(--gap-medium);
+        }
+
         &__illustration img {
             height: 480px;
             width: auto;
@@ -58,7 +62,7 @@
             align-items: inherit;
 
             & > * + * {
-                margin-top: var(--gap);
+                margin-top: var(--gap-large);
             }
         }
 
