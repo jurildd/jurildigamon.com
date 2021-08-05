@@ -133,6 +133,10 @@ a:hover {
     color: var(--medium-contrast);
 }
 
+a:focus-visible {
+    text-decoration: none;
+}
+
 a::after {
     content: '';
     position: absolute;
@@ -146,8 +150,12 @@ a::after {
     opacity: 0;
 }
 
-a:focus {
-    text-decoration: none;
+a:focus::after {
+    opacity: 1;
+}
+
+a:focus:not(:focus-visible)::after {
+    opacity: 1;
 }
 
 a:focus-visible::after {

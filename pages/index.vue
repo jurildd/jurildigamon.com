@@ -20,7 +20,19 @@
 </template>
 
 <script>
-    export default {};
+    export default {
+        head: {
+            title: '',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: 'I’m Juril Digamon, a product designer and design engineer (aka front-end'
+                        + ' designer). I specialize in creating modern, responsive, and accessible web designs.'
+                }
+            ],
+        }
+    };
 </script>
 
 <style lang="scss" scoped>

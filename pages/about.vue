@@ -27,7 +27,18 @@
 </template>
 
 <script>
-    export default {};
+    export default {
+        head: {
+            title: 'About',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: 'About Juril Digamon.'
+                }
+            ],
+        }
+    };
 </script>
 
 <style>

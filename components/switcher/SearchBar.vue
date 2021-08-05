@@ -6,17 +6,17 @@
                 color="low-contrast"
             />
         </div>
-        <label class="visually-hidden" for="search">
+        <label class="visually-hidden" for="searchbar">
             Search for a keyword
         </label>
         <input
-            id="search"
+            id="searchbar"
             ref="search"
             :value="value"
             autocomplete="off"
             class="search-bar__input t-body-md"
             type="text"
-            name="search"
+            name="searchbar"
             placeholder="Search for a keyword"
             @keydown.down="highlightNext"
             @keydown.up="highlightPrev"

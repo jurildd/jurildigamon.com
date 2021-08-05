@@ -4,14 +4,14 @@ export default {
 
 	// Global page headers (https://go.nuxtjs.dev/config-head)
 	head: {
-		title: 'Juril Digamon',
+		titleTemplate: '%s Juril Digamon - Product Designer & UI/UX Developer',
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-			{ hid: 'description', name: 'description', content: '' }
+			{ hid: 'description', name: 'description', content: 'Meta description' }
     ],
 		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
 		]
   },
 
@@ -58,5 +58,10 @@ export default {
 
 	// Build Configuration (https://go.nuxtjs.dev/config-build)
 	build: {
-	}
+	},
+
+	loading: {
+		color: '#494B52',
+        height: '5px'
+	},
 };

@@ -33,7 +33,18 @@
 </template>
 
 <script>
-    export default {};
+    export default {
+        head: {
+            title: 'Projects of',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: 'Juril Digamon\'s projects.'
+                }
+            ],
+        }
+    };
 </script>
 
 <style lang="scss" scoped>

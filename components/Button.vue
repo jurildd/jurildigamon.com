@@ -48,17 +48,19 @@
                 opacity: 0;
             }
 
-            &:hover::before {
+            &:hover::before, &:focus::before {
                 opacity: 1;
             }
 
-            &:focus {
-                &::before, &::after {
-                    opacity: 1;
-                }
+            &:focus::after {
+                opacity: 1;
             }
 
-            &:active::after, &:focus::after {
+            &:focus:not(:focus-visible)::after {
+                opacity: 1;
+            }
+
+            &:focus-visible::after {
                 opacity: 1;
             }
         }

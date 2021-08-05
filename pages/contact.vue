@@ -7,7 +7,18 @@
 </template>
 
 <script>
-    export default {};
+    export default {
+        head: {
+            title: 'Contact',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: 'Contact Juril Digamon.'
+                }
+            ],
+        }
+    };
 </script>
 
 <style>

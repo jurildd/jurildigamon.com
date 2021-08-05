@@ -211,7 +211,6 @@
 
             search(newVal) {
                 if (!this.isMobile) {
-                    console.log('here');
                     this.handleHeightAnimation();
                 }
                 if (newVal) {
@@ -340,8 +339,8 @@
             transition: height .2s cubic-bezier(0.4, 0.0, 0.2, 1);
 
             @media screen and (max-width: 600px) {
-                max-height: 540px;
-                min-height: 540px;
+                max-height: unset;
+                height: Min(calc(100vh - var(--gap-biggest)), 540px);
             }
 
             &::-webkit-scrollbar {

@@ -6,12 +6,14 @@
         <main class="page__content-wrapper">
             <div class="page__container">
                 <Nuxt />
-                <transition name="fade">
-                    <Footer
-                        v-if="showHint && !isMobile"
-                        @close="dismissFooter"
-                    />
-                </transition>
+                <template v-if="!isMobile">
+                    <transition name="fade">
+                        <Footer
+                            v-if="showHint"
+                            @close="dismissFooter"
+                        />
+                    </transition>
+                </template>
             </div>
         </main>
         <transition name="fade">
@@ -87,7 +89,6 @@
             },
 
             routeHandler(route) {
-                console.log(route);
                 if (route === 'twitter') {
                     window.open('https://twitter.com/jdd__________?s=09', '_blank');
                 }
