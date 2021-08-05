@@ -6,14 +6,12 @@
         <main class="page__content-wrapper">
             <div class="page__container">
                 <Nuxt />
-                <template v-if="!isMobile">
-                    <transition name="fade">
-                        <Footer
-                            v-if="showHint"
-                            @close="dismissFooter"
-                        />
-                    </transition>
-                </template>
+                <transition name="fade">
+                    <Footer
+                        v-if="showHint && !isMobile"
+                        @close="dismissFooter"
+                    />
+                </transition>
             </div>
         </main>
         <transition name="fade">
