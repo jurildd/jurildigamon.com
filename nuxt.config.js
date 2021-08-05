@@ -11,7 +11,7 @@ export default {
 			{ hid: 'description', name: 'description', content: 'Meta description' }
     ],
 		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png?v=1.0' }
 		]
   },
 
