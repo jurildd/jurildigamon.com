@@ -209,6 +209,51 @@ kbd {
     line-height: 1;
 }
 
+@media screen and (max-width: 600px) {
+    .t-header {
+        font-size: 2.6rem;
+    }
+
+    a {
+        font-size: 1.8rem;
+    }
+
+    .t-body {
+        font-size: 1.8rem;
+    }
+
+    .t-body-bold {
+        font-size: 1.8rem;
+    }
+
+    .t-body-md {
+        font-size: 1.6rem;
+    }
+
+    .t-body-sm {
+        font-size: 1.5rem;
+    }
+
+    .t-body-tiny {
+        font-size: 1.3rem;
+    }
+
+    kbd {
+        font-size: 1.3rem;
+    }
+}
+
+.visually-hidden {
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(0px 0px 99.9% 99.9%);
+	overflow: hidden;
+	border: 0;
+}
+
 /* Page transitions */
 .page-enter-active, .page-leave-active {
     transition: opacity var(--transition-default);

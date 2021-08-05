@@ -8,7 +8,10 @@
             <a
                 href="https://bradfrost.com/blog/post/frontend-design/"
                 target="_blank"
-            >front-end designer</a>).
+                rel="noreferrer"
+            >
+                front-end designer
+            </a>).
             I specialize in creating modern, responsive, and accessible web designs.
             <br />
             <br />

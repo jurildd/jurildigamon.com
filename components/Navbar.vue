@@ -5,6 +5,7 @@
                 <NuxtLink
                     to="/"
                     class="navbar__logo"
+                    aria-label="Logo"
                 >
                     <svg
                         width="43"
@@ -12,6 +13,7 @@
                         viewBox="0 0 43 19"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
+                        focusable="false"
                     >
                         <!-- eslint-disable -->
                         <path class="navbar__color" d="M5.55469 18.2812C8.87109 18.2812 10.8281 16.3242 10.8281 12.9961V1.08984H8.20312V12.9727C8.20312 14.9062 7.26562 15.9375 5.53125 15.9375C3.96094 15.9375 3.15234 14.9297 3.04688 13.6406L3.03516 13.5352H0.445312L0.457031 13.6758C0.597656 16.3711 2.42578 18.2812 5.55469 18.2812Z" />
@@ -32,6 +34,7 @@
                 </transition>
                 <Button
                     class="navbar__cmd icon"
+                    aria-label="Menu"
                     @click="cmdClickHandler"
                 >
                     <Icon

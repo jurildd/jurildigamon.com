@@ -1,14 +1,15 @@
 <template>
     <svg
+        :id="name"
         xmlns="http://www.w3.org/2000/svg"
         :width="width"
         :height="height"
-        :aria-labelledby="name"
         :class="color"
         class="icon"
         fill="none"
         :viewBox="`0 0 ${width} ${height}`"
         role="presentation"
+        focusable="false"
     >
         <!-- eslint-disable -->
 
