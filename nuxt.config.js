@@ -4,14 +4,15 @@ export default {
 
 	// Global page headers (https://go.nuxtjs.dev/config-head)
 	head: {
-		title: 'jurildigamon.com',
+		titleTemplate: '%s Juril Digamon - Product Designer & UI/UX Developer',
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-			{ hid: 'description', name: 'description', content: '' }
+			{ hid: 'description', name: 'description', content: '' },
+			{ hid: 'robots', name: 'robots', content: 'index, follow' },
     ],
 		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png?v=1.0' }
 		]
   },
 
@@ -22,7 +23,16 @@ export default {
 
 	// Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
 	plugins: [
+		'plugins/enable-event-bus.js',
 	],
+
+	loaders: {
+		vue: {
+			compilerOptions: {
+				preserveWhitespace: false
+			}
+		}
+	},
 
 	// Auto import components (https://go.nuxtjs.dev/config-components)
 	components: true,
@@ -39,6 +49,7 @@ export default {
 		'@nuxtjs/pwa',
 		// https://go.nuxtjs.dev/content
 		'@nuxt/content',
+		'@nuxtjs/robots'
 	],
 
 	// Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -49,5 +60,21 @@ export default {
 
 	// Build Configuration (https://go.nuxtjs.dev/config-build)
 	build: {
+	},
+
+	loading: {
+		color: '#494B52',
+        height: '5px'
+	},
+
+	pwa: {
+    icon: {
+      source: './static/pwa-icon.png',
+    },
+
+	robots: {
+		UserAgent: '*',
+		Disallow: ''
 	}
+  },
 };
