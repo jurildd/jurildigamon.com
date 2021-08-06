@@ -6,9 +6,9 @@
                 color="low-contrast"
             />
         </div>
-        <label class="visually-hidden" for="searchbar">
+        <!-- <label class="visually-hidden" for="searchbar">
             Search for a keyword
-        </label>
+        </label> -->
         <input
             id="searchbar"
             ref="search"
