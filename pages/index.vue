@@ -1,49 +1,40 @@
 <template>
-	<div class="container">
-		<h2 class="t-body">
-			Hello, my name is Juril Digamon.
-		</h2>
-		<p class="t-body-bold">
-			Watch this space.
-		</p>
-	</div>
+    <article class="container">
+        <h1 class="t-header">
+            Hello.
+        </h1>
+        <p class="t-body">
+            I’m Juril Digamon, a product designer and design engineer (aka
+            <a
+                href="https://bradfrost.com/blog/post/frontend-design/"
+                target="_blank"
+                rel="noreferrer"
+            >
+                front-end designer
+            </a>).
+            I specialize in creating modern, responsive, and accessible web designs.
+        </p>
+    </article>
 </template>
 
 <script>
-	export default {};
+    export default {
+        head: {
+            title: '',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: 'I’m Juril Digamon, a product designer and design engineer (aka front-end'
+                        + ' designer). I specialize in creating modern, responsive, and accessible web designs.'
+                }
+            ],
+        }
+    };
 </script>
 
-<style>
-	.container {
-		margin: 0 auto;
-		min-height: 100vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-	}
-
-	.title {
-		font-family: "Quicksand", "Source Sans Pro", -apple-system,
-			BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-			sans-serif;
-		display: block;
-		font-weight: 300;
-		font-size: 100px;
-		color: #35495e;
-		letter-spacing: 1px;
-	}
-
-	.subtitle {
-		font-weight: 300;
-		font-size: 42px;
-		color: #526488;
-		word-spacing: 5px;
-		padding-bottom: 15px;
-	}
-
-	.links {
-		padding-top: 15px;
-	}
+<style lang="scss" scoped>
+    .t-header {
+        margin-bottom: var(--gap-large);
+    }
 </style>
