@@ -155,6 +155,35 @@
             &:hover::before, &:focus::before {
                 opacity: 1;
             }
+
+            // &:focus {
+            //     border-radius: var(--radius-icon);
+            //     border: 2px solid var(--medium-contrast);
+            //     transition: opacity var(--transition-default);
+            // }
+
+            // &:focus:not(:focus-visible) {
+            //     border-radius: unset;
+            //     border: unset;
+            //     transition: unset;
+            // }
+
+            // &:focus:not(:focus-visible)::after {
+            //     opacity: 0;
+            // }
+            // &:focus:not(:focus-visible) {
+            //     &:focus::after {
+            //         opacity: 0 !important;
+            //     }
+            // }
+
+            // &:focus::after:not(:focus-visible) {
+            //     opacity: 0;
+            // }
+
+            // &:focus-visible::after {
+            //     opacity: 1 !important;
+            // }
         }
 
         &__cmd {
