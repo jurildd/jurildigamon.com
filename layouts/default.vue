@@ -43,7 +43,8 @@
                 showModal: false,
                 switcherKeyBind: null,
                 keyBinds: null,
-                showHint: true
+                showHint: true,
+                theme: 'dark'
             };
         },
 
@@ -69,6 +70,11 @@
             if (localStorage.getItem('show_hint')) {
                 this.showHint = JSON.parse(localStorage.getItem('show_hint'));
             }
+
+            if (localStorage.getItem('theme')) {
+                this.theme = localStorage.getItem('theme');
+                document.body.setAttribute('data-theme', this.theme);
+            }
         },
 
         methods: {
@@ -82,8 +88,9 @@
             },
 
             toggleThemeHandler() {
-                document.body.hasAttribute('data-theme') ? document.body.removeAttribute('data-theme') :
-                document.body.setAttribute('data-theme', 'light');
+                this.theme == 'dark' ? this.theme = 'light' : this.theme = 'dark';
+                document.body.setAttribute('data-theme', this.theme);
+                localStorage.setItem('theme', this.theme);
             },
 
             routeHandler(route) {
