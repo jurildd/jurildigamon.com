@@ -56,7 +56,7 @@
                 if (process.client) {
                     return document.body.clientWidth < 600 ? true : false;
                 }
-                return false;
+                return '';
             }
         },
 
