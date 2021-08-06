@@ -45,18 +45,23 @@
     --hover-general: rgba(159, 166, 178, 0.1);
 
     /* Elevation */
-    --elevation-high-dark:  0 0 3px 0 #1B1B1C 6%,
-                            0 0 7px 0 #1B1B1C 8%,
-                            0 0 13px 0 #1B1B1C 11%,
-                            0 0 23px 0 #1B1B1C 13%,
-                            0 0 44px 0 #1B1B1C 15%,
-                            0 -2px 105px 0px #1B1B1C 21%;
-    --elevation-high-light:  0 0 3px 0 #DDDDE5 6%,
-                            0 0 7px 0 #DDDDE5 8%,
-                            0 0 13px 0 #DDDDE5 11%,
-                            0 0 23px 0 #DDDDE5 13%,
-                            0 0 44px 0 #DDDDE5 15%,
-                            0 -2px 105px 0px #DDDDE5 21%;
+    --elevation-low-dark: 0px 4px 30px 2px rgba(27,27,28,.3);
+
+    --elevation-high-dark:  0 0 3px 0 rgba(27, 27, 28, 0.06),
+                            0 0 7px 0 rgba(27, 27, 28, 0.08),
+                            0 0 13px 0 rgba(27, 27, 28, 0.11),
+                            0 0 23px 0 rgba(27, 27, 28, 0.13),
+                            0 0 44px 0 rgba(27, 27, 28, 0.15),
+                            0 -2px 105px 0 rgba(27, 27, 28, 0.21);
+
+    --elevation-low-light: 0px 4px 30px 2px rgba(221, 221, 229, 1);
+
+    --elevation-high-light: 0 0 3px 0 rgba(221, 221, 229, 0.06),
+                            0 0 7px 0 rgba(221, 221, 229, 0.08),
+                            0 0 13px 0 rgba(221, 221, 229, 0.11),
+                            0 0 23px 0 rgba(221, 221, 229, 0.13),
+                            0 0 44px 0 rgba(221, 221, 229, 0.15),
+                            0 -2px 105px 0px rgba(221, 221, 229, 0.21);
 
     /* Typography */
     --font-family-sans: "SF UI Text", sans-serif;
