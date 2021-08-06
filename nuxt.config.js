@@ -64,4 +64,10 @@ export default {
 		color: '#494B52',
         height: '5px'
 	},
+
+	pwa: {
+    icon: {
+      source: './static/pwa-icon.png',
+    },
+  },
 };
