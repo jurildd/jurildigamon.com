@@ -46,9 +46,7 @@
             width: 100%;
 
             @media screen and (max-width: 600px) {
-                width: calc(100% - var(--gap)*2);
-                left: 50%;
-                transform: translateX(-50%);
+                display: none;
             }
         }
 
