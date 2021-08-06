@@ -57,11 +57,11 @@
             }
 
             &:focus:not(:focus-visible)::after {
-                opacity: 1;
+                opacity: 0;
             }
 
             &:focus-visible::after {
-                opacity: 1;
+                opacity: 1 !important;
             }
         }
 

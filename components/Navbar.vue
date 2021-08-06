@@ -147,7 +147,7 @@
                 width: 100%;
                 height: 100%;
                 border-radius: var(--radius-icon);
-                border: 2px solid var(--medium-contrast);
+                border: 2px solid var(--high-contrast);
                 transition: opacity var(--transition-default);
                 opacity: 0;
             }

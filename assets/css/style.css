@@ -133,6 +133,14 @@ a:hover {
     color: var(--medium-contrast);
 }
 
+a:focus {
+    text-decoration: none;
+}
+
+a:focus:not(:focus-visible){
+    text-decoration: underline;
+}
+
 a:focus-visible {
     text-decoration: none;
 }
@@ -155,11 +163,11 @@ a:focus::after {
 }
 
 a:focus:not(:focus-visible)::after {
-    opacity: 1;
+    opacity: 0;
 }
 
 a:focus-visible::after {
-    opacity: 1;
+    opacity: 1 !important;
 }
 
 /* Type Specs */
