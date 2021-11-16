@@ -14,7 +14,7 @@
                         color="medium-contrast"
                     />
                 </div>
-                <p class="t-body-md">
+                <p class="t-body">
                     {{ value }}
                 </p>
             </div>

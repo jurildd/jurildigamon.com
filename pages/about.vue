@@ -1,5 +1,15 @@
 <template>
     <article class="container">
+        <!-- <figure class="img-wrapper">
+            <img
+                src="~/assets/images/me.png"
+                alt="Juril memoji"
+                loading="lazy"
+            >
+            <figcaption class="t-body-sm">
+                I'm not even sure if I look like this, but I guess this'll have to do
+            </figcaption>
+        </figure> -->
         <p class="t-body">
             My name is Juril, and I am a product designer, UI engineer, front-end designer,
             design engineer, and whatever the hell you want to call it. Basically, I design
@@ -12,10 +22,8 @@
         </p>
         <p class="t-body">
             All that aside, I'm a developer based in Cebu, Philippines. Currently into
-            mechanical keyboards and small form factor PCs when not coding.
-        </p>
-        <p class="t-body">
-            I play VALORANT and Dota 2 sometimes. I also have two cats and one dog.
+            mechanical keyboards, small form factor PCs, VALORANT and Dota 2. I also have
+            two cats and one dog.
         </p>
     </article>
 </template>
@@ -36,9 +44,25 @@
 </script>
 
 <style lang="scss" scoped>
-    .container {
-        p + p {
-            margin-top: var(--gap-large);
+
+    .img-wrapper {
+        width: 140px;
+        margin: 0 auto var(--gap-large);
+        animation: spin 4s linear infinite;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        figcaption {
+            font-style: italic;
+        }
+    }
+
+    @keyframes spin {
+        100% {
+            transform: rotate(360deg);
         }
     }
 
