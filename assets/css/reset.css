@@ -10,7 +10,7 @@ body {
 	/* Prevent scrollbar shift */
 	margin-left: calc(100vw - 100%);
 	margin-right: 0;
-	font-size: 2rem;
+	font-size: 1.6rem;
 	min-height: 100vh;
     height: 100%;
 }

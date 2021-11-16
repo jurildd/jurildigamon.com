@@ -115,10 +115,11 @@
 
             &::placeholder {
                 color: var(--low-contrast);
-                font-size: 1.8rem;
+                font-size: 1.6rem;
                 font-style: normal;
-                font-weight: var(--font-weight-regular);
-                letter-spacing: -0.05em;
+                font-weight: 400;
+                letter-spacing: var(--tracking-body);
+                line-height: var(--leading-body);
             }
         }
     }

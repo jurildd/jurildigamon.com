@@ -7,10 +7,10 @@
                 loading="lazy"
             />
             <caption>
-                <p class="t-body-tiny">
+                <p class="t-body-sm">
                     Illustration from
                     <a
-                        class="t-body-tiny"
+                        class="t-body-sm"
                         href="https://absurd.design"
                         target="_blank"
                     >
@@ -20,7 +20,7 @@
             </caption>
         </div>
         <div class="error-page__text">
-            <p class="t-body-bold">
+            <p class="t-header">
                 404
             </p>
             <p class="t-body-sm">

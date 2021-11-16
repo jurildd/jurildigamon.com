@@ -1,7 +1,7 @@
 <template>
     <li class="switcher__group-item">
         <div class="switcher__group-label">
-            <span class="t-body-tiny">
+            <span class="t-body-sm">
                 {{ label }}
             </span>
         </div>
