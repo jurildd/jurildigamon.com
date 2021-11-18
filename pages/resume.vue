@@ -51,7 +51,8 @@
                         <li class="resume__group-list-item">
                             <p class="t-body-sm">
                                 Responsible for revamping various sections of our website,
-                                including the landing page, checkout process, and site-wide
+                                including but not limited to the landing page,
+                                checkout process, log in and sign up, and overall site-wide
                                 navigation, with a focus on better overall client experience.
                             </p>
                         </li>
