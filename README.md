@@ -1,4 +1,5 @@
 # jurildigamon.com
+Made by yours truly using [Nuxt.js](https://nuxtjs.org/) and [Vercel](https://vercel.com/)
 
 ## Build Setup
 
