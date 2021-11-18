@@ -163,7 +163,7 @@ a:focus::after {
 
 /* For Firefox and Chromium-based browsers (._. Safari ._.) */
 @supports selector(*:focus-visible) {
-    a:focus {
+    a:focus, button.text:focus {
         text-decoration: underline;
     }
 
@@ -171,12 +171,20 @@ a:focus::after {
         opacity: 0;
     }
 
-    a:focus-visible {
+    button.text:focus::after {
+        opacity: 0 !important;
+    }
+
+    a:focus-visible, button.text:focus-visible {
         text-decoration: none;
     }
 
-    a:focus-visible::after {
+    a:focus-visible::after  {
         opacity: 1;
+    }
+
+    button.text:focus-visible::after {
+        opacity: 1 !important;
     }
 
     button.icon:focus::after {
