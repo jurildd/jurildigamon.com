@@ -1,35 +1,162 @@
 <template>
     <article class="container">
-        <!-- <figure class="img-wrapper">
-            <img
-                src="~/assets/images/me.png"
-                alt="Juril memoji"
-                loading="lazy"
+        <div class="container__group">
+            <figure class="container__img-wrapper">
+                <img
+                    src="~/assets/images/me.jpg"
+                    alt="A photo of Juril Digamon"
+                    loading="lazy"
+                />
+            </figure>
+            <div>
+                <p class="t-body">
+                    My name is Juril Digamon. I am a product designer, UI engineer, front-end designer,
+                    and whatever the hell you want to call it. Basically, I design
+                    stuff and code the <em>front</em> front-end of said stuff. I am currently
+                    working as a Design Lead at
+                    <a
+                        href="https://bposeats.com/"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        BPOSeats
+                    </a>,
+                    where I design, code, and
+                    oversee all of our four sister websites.
+                </p>
+                <p class="t-body">
+                    As a design-minded developer, I'm very keen on writing HTML, CSS, and
+                    presentational Javascript with semantics, responsiveness, accessibility, and performance in mind.
+                </p>
+                <p class="t-body">
+                    I also like exploring and learning new stuff in tech. Lately, I've
+                    been trying to learn how to use <a
+                        href="https://threejs.org/"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Three.js
+                    </a>.
+                </p>
+            </div>
+        </div>
+        <div class="container__group-btm">
+            <p class="t-body">
+                Outside of work, I'm a father of
+                <Button
+                    class="text"
+                    @click="showCats = !showCats"
+                >
+                    two cats
+                </Button>
+            </p>
+            <figure
+                v-if="showCats"
+                class="container__img-wrapper"
             >
-            <figcaption class="t-body-sm">
-                I'm not even sure if I look like this, but I guess this'll have to do
-            </figcaption>
-        </figure> -->
-        <p class="t-body">
-            My name is Juril, and I am a product designer, UI engineer, front-end designer,
-            design engineer, and whatever the hell you want to call it. Basically, I design
-            stuff and code the front-front-end of said stuff.
-        </p>
-        <p class="t-body">
-            As a design-minded developer, I'm very keen on writing HTML, CSS, and
-            presentational Javascript with semantics, responsiveness, accessibility,
-            and performance in mind.
-        </p>
-        <p class="t-body">
-            All that aside, I'm a developer based in Cebu, Philippines. Currently into
-            mechanical keyboards, small form factor PCs, VALORANT and Dota 2. I also have
-            two cats and one dog.
-        </p>
+                <img
+                    src="~/assets/images/cats.jpg"
+                    alt="A photo of two cats"
+                    loading="lazy"
+                />
+                <figcaption>
+                    <p class="t-body-sm">
+                        My two cats, Levi and Lucca.
+                    </p>
+                </figcaption>
+            </figure>
+            <p class="t-body">
+                and
+                <Button
+                    class="text"
+                    @click="showDog = !showDog"
+                >
+                    one dog
+                </Button>.
+            </p>
+            <figure
+                v-if="showDog"
+                class="container__img-wrapper"
+            >
+                <img
+                    src="~/assets/images/chase.jpg"
+                    alt="A photo of a dog"
+                    loading="lazy"
+                />
+                <figcaption>
+                    <p class="t-body-sm">
+                        The best dog, Chase.
+                    </p>
+                </figcaption>
+            </figure>
+            <p class="t-body">
+                Most of my free time is spent taking care of them.
+                Other than that, I'm currently into
+                <Button
+                    class="text"
+                    @click="showKeeb = !showKeeb"
+                >
+                    mechanical keyboards
+                </Button>,
+            </p>
+            <figure
+                v-if="showKeeb"
+                class="container__img-wrapper"
+            >
+                <img
+                    src="~/assets/images/mechkb.jpg"
+                    alt="A photo of a mechanical keyboard"
+                    loading="lazy"
+                />
+                <figcaption>
+                    <p class="t-body-sm">
+                        IDOBAO ID80 75% w/ Gateron Ink Blacks filmed and lubed w/ Krytox 205g0.
+                        JWK stabilizers, ePBT WoB keycaps.
+                    </p>
+                </figcaption>
+            </figure>
+            <p class="t-body">
+                <Button
+                    class="text"
+                    @click="showPC = !showPC"
+                >
+                    small form factor PCs
+                </Button>,
+            </p>
+            <figure
+                v-if="showPC"
+                class="container__img-wrapper"
+            >
+                <img
+                    src="~/assets/images/pc.jpg"
+                    alt="A photo of a small form facor PC"
+                    loading="lazy"
+                />
+                <figcaption>
+                    <p class="t-body-sm">
+                        NCASE M1 v6.1 w/ Noctua fans and cooler. RX 580 GPU lent by a friend and i5-11400 CPU.
+                    </p>
+                </figcaption>
+            </figure>
+            <p class="t-body">
+                VALORANT, and Dota 2.
+                I drink too much coffee and red bull. Way too much.
+            </p>
+        </div>
     </article>
 </template>
 
 <script>
     export default {
+
+        data() {
+            return {
+                showCats: false,
+                showDog: false,
+                showKeeb: false,
+                showPC: false,
+            };
+        },
         head: {
             title: 'About',
             meta: [
@@ -45,25 +172,46 @@
 
 <style lang="scss" scoped>
 
-    .img-wrapper {
-        width: 140px;
-        margin: 0 auto var(--gap-large);
-        animation: spin 4s linear infinite;
+    .container {
+        &__group {
+            display: flex;
+            column-gap: 24px;
 
-        img {
-            width: 100%;
-            height: 100%;
+            @media screen and (max-width: 600px) {
+                flex-direction: column;
+                row-gap: 16px;
+            }
+        }
+        &__img-wrapper {
+            border-radius: 20px;
+            width: 320px;
+            flex-shrink: 0;
+
+            img {
+                width: 100%;
+                border-radius: inherit;
+            }
+
+            @media screen and (max-width: 500px) {
+                width: 100%
+            }
         }
 
-        figcaption {
-            font-style: italic;
+        &__group-btm {
+            display: inline-block;
+            margin-top: 24px;
+
+            p {
+                display: inline;
+            }
+
+            p + figure {
+                margin: 16px 0;
+            }
         }
     }
 
-    @keyframes spin {
-        100% {
-            transform: rotate(360deg);
-        }
+    figcaption p {
+        font-style: italic;
     }
-
 </style>

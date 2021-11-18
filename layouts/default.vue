@@ -7,9 +7,9 @@
             <div class="page__container">
                 <Nuxt />
                 <transition name="fade">
-                    <Footer
+                    <Hint
                         v-if="showHint && !isMobile"
-                        @close="dismissFooter"
+                        @close="dismissHint"
                     />
                 </transition>
             </div>
@@ -109,7 +109,8 @@
                         'z a': () => this.routeHandler('/about'),
                         'z c': () => this.routeHandler('/contact'),
                         'z p': () => this.routeHandler('/projects'),
-                        'z r': () => this.routeHandler('twitter'),
+                        'z r': () => this.routeHandler('/resume'),
+                        'z w': () => this.routeHandler('twitter'),
                         'z g': () => this.routeHandler('github'),
                         'z l': () => this.routeHandler('linkedin'),
                     });
@@ -130,7 +131,7 @@
                 }
             },
 
-            dismissFooter() {
+            dismissHint() {
                 this.showHint = false;
                 localStorage.setItem('show_hint', this.showHint);
             }

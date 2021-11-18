@@ -9,8 +9,6 @@
                 <div class="switcher__icon">
                     <Icon
                         :name="icon"
-                        :width="iconWidth"
-                        :height="iconHeight"
                         color="medium-contrast"
                     />
                 </div>
@@ -45,16 +43,6 @@
             },
 
             shortcut: {
-                type: String,
-                required: true
-            },
-
-            iconWidth: {
-                type: String,
-                required: true
-            },
-
-            iconHeight: {
                 type: String,
                 required: true
             },
@@ -95,7 +83,7 @@
                 color: var(--high-contrast);
 
                 .icon.medium-contrast > * {
-                    fill: var(--high-contrast) !important;
+                    stroke: var(--high-contrast) !important;
                 }
 
                 &::before {
@@ -107,7 +95,7 @@
                 color: var(--high-contrast);
 
                 .icon.medium-contrast > * {
-                    fill: var(--high-contrast) !important;
+                    stroke: var(--high-contrast) !important;
                 }
             }
         }

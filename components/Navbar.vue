@@ -8,8 +8,8 @@
                     aria-label="Logo"
                 >
                     <svg
-                        width="24"
-                        height="24"
+                        width="20"
+                        height="20"
                         viewBox="0 0 30 30"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -40,8 +40,6 @@
                     @click="cmdClickHandler"
                 >
                     <Icon
-                        width="26"
-                        height="26"
                         name="cmd"
                         color="nav"
                     />

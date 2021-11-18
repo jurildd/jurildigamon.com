@@ -65,8 +65,6 @@
                                 id: 0,
                                 value: 'Toggle theme',
                                 icon: 'theme',
-                                width: '21',
-                                height: '22',
                                 shortcut: 't',
                                 route: 'toggle-theme'
                             }
@@ -79,8 +77,6 @@
                                 id: 1,
                                 value: 'Home',
                                 icon: 'home',
-                                width: '16',
-                                height: '18',
                                 shortcut: 'h',
                                 route: '/'
                             },
@@ -88,8 +84,6 @@
                                 id: 2,
                                 value: 'About',
                                 icon: 'about',
-                                width: '18',
-                                height: '18',
                                 shortcut: 'a',
                                 route: '/about'
                             },
@@ -97,8 +91,6 @@
                                 id: 3,
                                 value: 'Contact',
                                 icon: 'contact',
-                                width: '20',
-                                height: '16',
                                 shortcut: 'c',
                                 route: '/contact'
                             },
@@ -106,10 +98,15 @@
                                 id: 4,
                                 value: 'Projects',
                                 icon: 'document',
-                                width: '16',
-                                height: '20',
                                 shortcut: 'p',
                                 route: '/projects'
+                            },
+                            {
+                                id: 5,
+                                value: 'Resume',
+                                icon: 'resume',
+                                shortcut: 'r',
+                                route: '/resume'
                             },
                         ]
                     },
@@ -117,32 +114,26 @@
                         groupLabel: 'Social',
                         groupItems: [
                             {
-                                id: 5,
+                                id: 6,
                                 value: 'Twitter',
                                 icon: 'twitter',
-                                width: '22',
-                                height: '17',
-                                shortcut: 'r',
+                                shortcut: 'w',
                                 route: 'twitter'
                             },
                             {
-                                id: 6,
+                                id: 7,
                                 value: 'Github',
                                 icon: 'github',
-                                width: '20',
-                                height: '20',
                                 shortcut: 'g',
                                 route: 'github'
                             },
                             {
-                                id: 7,
+                                id: 8,
                                 value: 'Linkedin',
                                 icon: 'linkedin',
-                                width: '18',
-                                height: '18',
                                 shortcut: 'l',
                                 route: 'linkedin'
-                            },
+                            }
                         ]
                     }
                 ],
