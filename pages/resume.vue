@@ -28,7 +28,7 @@
                             BPOSeats — UI/UX Development & Design Lead
                         </h3>
                         <p class="t-body-sm">
-                            August 2019 – Present
+                            August 2019 – January 2022
                         </p>
                     </div>
                     <ul class="resume__group-list-items">
