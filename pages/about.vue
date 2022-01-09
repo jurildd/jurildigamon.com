@@ -13,7 +13,6 @@
                     My name is Juril Digamon. I am a product designer, UI engineer, front-end designer,
                     and whatever the hell you want to call it. Basically, I design
                     stuff and code the <em>front</em> front-end of said stuff. I am currently
-<<<<<<< HEAD
                     working as a UI/UX Designer at
                     <a
                         href="https://symph.co/"
@@ -22,18 +21,6 @@
                     >
                         Symph
                     </a>.
-=======
-                    working as a Design Lead at
-                    <a
-                        href="https://bposeats.com/"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        BPOSeats
-                    </a>,
-                    where I design, code, and
-                    oversee all of our four sister websites.
->>>>>>> 243ed9ca2d01c9a8ea3dcf8ca42e15f25d39ee76
                 </p>
                 <p class="t-body">
                     As a design-minded developer, I'm very keen on writing HTML, CSS, and
@@ -47,7 +34,6 @@
                         rel="noreferrer"
                     >
                         Three.js
-<<<<<<< HEAD
                     </a>, as well as creating designs for iOS and coding them with
                     <a
                         href="https://developer.apple.com/xcode/swiftui/"
@@ -55,8 +41,6 @@
                         rel="noreferrer"
                     >
                         SwiftUI
-=======
->>>>>>> 243ed9ca2d01c9a8ea3dcf8ca42e15f25d39ee76
                     </a>.
                 </p>
             </div>
