@@ -13,10 +13,12 @@
                 </p>
             </div>
             <Button
-                class="small t-body-sm"
+                class="small"
                 @click="$emit('close')"
             >
-                Got it
+                <span class="t-body-sm">
+                    Got it
+                </span>
             </Button>
         </div>
     </footer>

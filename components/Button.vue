@@ -43,7 +43,7 @@
                 width: 100%;
                 height: 100%;
                 border-radius: inherit;
-                border: 2px solid var(--high-contrast);
+                border: 1px solid var(--high-contrast);
                 transition: opacity var(--transition-default);
                 opacity: 0;
             }
@@ -54,14 +54,6 @@
 
             &:focus::after {
                 opacity: 1;
-            }
-
-            &:focus:not(:focus-visible)::after {
-                opacity: 0;
-            }
-
-            &:focus-visible::after {
-                opacity: 1 !important;
             }
         }
 
@@ -97,7 +89,7 @@
                 width: calc(100% + 8px);
                 height: calc(100% + 8px);
                 border-radius: inherit;
-                border: 2px solid var(--high-contrast);
+                border: 1px solid var(--high-contrast);
                 transition: opacity var(--transition-default);
                 opacity: 0;
             }
@@ -113,7 +105,43 @@
                 }
             }
 
-            &:active::after, &:focus::after {
+            &:focus::after {
+                opacity: 1;
+            }
+        }
+
+        &.text {
+            position: relative;
+            display: inline-block;
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: var(--leading-body);
+            letter-spacing: var(--tracking-body);
+            color: var(--high-contrast);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 7px;
+            outline: none;
+
+            &:hover {
+                color: var(--medium-contrast);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -4px;
+                left: -4px;
+                width: calc(100% + 8px);
+                height: calc(100% + 5px);
+                border-radius: var(--radius-button);
+                border: 1px solid var(--high-contrast);
+                transition: opacity var(--transition-default);
+                opacity: 0;
+            }
+
+            &:focus::after {
                 opacity: 1;
             }
         }
