@@ -25,6 +25,23 @@
                 <div class="resume__group-item">
                     <div class="resume__group-header">
                         <h3 class="t-body-sm bold">
+                            Symph — UI/UX Designer
+                        </h3>
+                        <p class="t-body-sm">
+                            January 2022 – Present
+                        </p>
+                    </div>
+                    <ul class="resume__group-list-items">
+                        <li class="resume__group-list-item">
+                            <p class="t-body-sm">
+                                Crafting beautiful sites and apps from start to finish.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="resume__group-item">
+                    <div class="resume__group-header">
+                        <h3 class="t-body-sm bold">
                             BPOSeats — UI/UX Development & Design Lead
                         </h3>
                         <p class="t-body-sm">
