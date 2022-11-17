@@ -14,7 +14,7 @@
     "@nuxtjs/robots": "^2.5.0",
     "@vercel/analytics": "^0.1.5",
     "autoprefixer": "^10.4.0",
-    "core-js": "^3.19.1",
+    "core-js": "^3.22.7",
     "nuxt": "^2.15.8",
     "tinykeys": "^1.2.0"
   },
